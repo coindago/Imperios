@@ -27,7 +27,11 @@ android {
         resources.excludes += "DebugProbesKt.bin"
     }
     defaultConfig {
-        namespace = BuildConfig.identifier
+        // Keep the namespace as com.unciv.app: the R class is generated in this
+        // package and the Kotlin code references it unqualified. Changing it
+        // breaks the build ("Unresolved reference 'R'"). The Play Store
+        // identity is the applicationId below, which stays com.coindago.imperios.
+        namespace = "com.unciv.app"
         applicationId = BuildConfig.identifier
         minSdk = 21
         targetSdk = 36
