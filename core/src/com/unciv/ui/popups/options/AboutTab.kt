@@ -24,6 +24,7 @@ internal class AboutTab(
             val versionAnchor = Regex("""\.|-patch\d+$""").replace(UncivGame.VERSION.text, "")
             val lines = sequence {
                 yield(FormattedLine(extraImage = "banner", imageSize = 240f, centered = true))
+                yield(FormattedLine("Un juego por CoinDago", centered = true))
                 yield(FormattedLine())
                 yield(FormattedLine("{Version}: ${UncivGame.VERSION.toNiceString()}", link = "${Constants.uncivRepoURL}blob/master/changelog.md#$versionAnchor"))
                 yield(FormattedLine("See online Readme", link = "${Constants.uncivRepoURL}blob/master/README.md#unciv---foss-civ-v-for-androiddesktop"))
